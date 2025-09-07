@@ -1,0 +1,32 @@
+header{
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top:0;
+    left:0;
+    display:flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+#container{
+    width: 92%;
+    height: 100%;
+    border-bottom: 3px solid var(--blue);
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+}
+
+img{
+    width: 40px;
+    height: auto;
+    fill: var(--blue);
+    padding: 0 20px;
+}
+nav{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}

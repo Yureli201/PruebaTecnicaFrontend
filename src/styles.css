@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --back:#FFFFFF;
+    --green: #0AE98A;
+    --blue: #0A2239;
+    --purple: #7979FD;
+
+    --poppins: 'Poppins', sans-serif;
+    --sofia: 'Sofia Sans', sans-serif;
+    --assistant: 'Assistant', sans-serif;
+
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/assets/fonts/Poppins.woff2') format(woff2);
+    font-size: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Assistant';
+    src: url('/assets/fonts/Assistant.woff2') format(woff2);
+    font-size: normal;
+    font-weight: 300 500;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Sofia Sans';
+    src: url('/assets/fonts/SofiaSans.woff2') format(woff2);
+    font-size: normal;
+    font-weight: 300 700;
+    font-display: swap;
+}
+
+body{
+    margin:0px;
+    font-family: 'Poppins', sans-serif;
+}
