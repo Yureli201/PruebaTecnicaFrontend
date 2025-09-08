@@ -1,0 +1,14 @@
+#container{
+    width: 92%;
+    margin: auto;
+    background-color: yellowgreen;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 40px;
+}
+
+app-product-card{
+    min-width: 250px;
+    max-width: 25%;
+}

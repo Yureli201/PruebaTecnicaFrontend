@@ -1,5 +1,5 @@
 main{
-    height: 100vh;
+    height: 100dvh;
     width: 100%;
     background-color: var(--green);
     display: flex;
@@ -92,6 +92,7 @@ p{
         justify-content: center;
     }
     #container{
+        width: 90%;
         margin: 0;
     }
 }

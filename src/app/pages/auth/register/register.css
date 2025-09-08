@@ -108,11 +108,11 @@ p{
     }
     #container{
         margin: 0;
+        width: 90%;
         position:static;
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
-        padding:5px ;
-        
+        padding:5px;
     }
     form{
         gap:10px
@@ -122,6 +122,7 @@ p{
     }
     #passwords{
         grid-template-columns: 1fr;
+        gap:10px
     }
     h1{
         margin-bottom: 0;

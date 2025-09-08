@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class ProductCard {
 
+  imageUrl = '/assets/img/QkIa5tT.jpeg'
+  title = 'Producto ejemplo'
+  description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel sem ornare, fermentum tellus eu, tristique quam.'
+  price = '$2500'
 }
