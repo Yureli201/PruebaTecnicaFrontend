@@ -6,6 +6,7 @@
     --btn: #B3C7FF;
     --btnHover: #9eb6fa;
     --primary:#0AE98A;
+    --error:#FF4B4B;
 
 
     --back1-95: #17181Cf2;
@@ -31,7 +32,7 @@ body{
     background-color: var(--back1);
 }
 
-.boton{
+.button{
     background-color: var(--btn);
     color: var(--back1);
     border: none;
@@ -45,8 +46,9 @@ body{
     transition: all 0.3s ease;
 }
 
-.boton:hover{
+.button:hover{
     background-color: var(--btnHover);
     transform: translateY(-2px);
     box-shadow: 0 8px 25px #b3c7ff66;
 }
+

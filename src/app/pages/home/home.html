@@ -2,23 +2,22 @@
     <div id="hero">
         <img id="img-hero" src="\assets\img\QkIa5tT.jpeg" alt="">
         <div id="text-hero">
-            <h1>LA MEJOR TIENDA DE TECNOLOGÍA</h1>
-            <p>Encuentra los mejores productos al mejor precio</p>
-            <button class="boton">Ver productos</button>
+            <h1>THE BEST TECHNOLOGY STORE</h1>
+            <p>Find the best products at the best price</p>
+            <button class="button">View Products</button>
         </div>
     </div>
     
     <div id="products">
-        <h1>PRODUCTOS DESTACADOS</h1>
+        <h1>FEATURED PRODUCTS</h1>
         <div id="container-cards">
-            <app-product-card class="card"></app-product-card>
-            <app-product-card class="card"></app-product-card>
-            <app-product-card class="card"></app-product-card>
+            <app-product-card [description]="this.description" class="card"></app-product-card>
+
         </div>
     </div>
     
     <div id="categories">
-        <h1>CATEGORÍAS</h1>
+        <h1>CATEGORIES</h1>
         <div id="container-categories">
             <div class="card-categories">
                 <img src="/assets/img/QkIa5tT.jpeg" alt="Clothes category">

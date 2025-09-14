@@ -1,20 +1,23 @@
 <main>
-    <img src="/assets/img/bannerLogin.webp" alt="imagen de login">
+    <img src="/assets/img/bannerLogin.webp" alt="login image">
     <div id="container">
         <h1>LOGIN</h1>
         <form>
+            <span id="error-span" *ngIf='error'>Oops, incorrect username or password</span>
+            <span id="success-span" *ngIf='success'>Login successful! Welcome back.</span>
+            
             <div class="inputs">
-                <label for="email">Correo electrónico</label>
-                <input type="email" id="email" name="email" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" [(ngModel)]="credentials.email" required>
             </div>
             <div class="inputs">
-                <label for="password">Contraseña</label>
-                <input type="password" id="password" name="password" required>
-            </div> 
-
-            <button class="boton" type="submit">Acceder</button>
-
-            <p>¿Aún no tienes una cuenta? <a>Registrate</a></p>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" [(ngModel)]="credentials.password" required>
+            </div>
+            <button class="button" type="submit" (click)="login(this.credentials)">Sign In</button>
+            
+            <p>Don't have an account yet? <a routerLink="/register">Sign Up</a></p>
         </form>
+
     </div>
 </main>

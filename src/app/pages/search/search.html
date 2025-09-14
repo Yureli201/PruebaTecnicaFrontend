@@ -1,10 +1,10 @@
 <main>
     <div id="search-header">
         <div id="search-container">
-            <h1>NUESTRO CATÁLOGO</h1>
+            <h1>OUR CATALOG</h1>
             <div id="search-bar">
-                <input type="text" id="search-input" placeholder="¿Qué estás buscando?">
-                <button class="boton search-btn" title="Buscar productos">
+                <input type="text" id="search-input" placeholder="What are you looking for?">
+                <button class="button search-btn" title="Search products">
                     <fa-icon [icon]="search" />
                 </button>
             </div>
@@ -13,33 +13,33 @@
 
     <div id="search-content">
         <aside id="filters-sidebar">
-            <h2>FILTROS</h2>
+            <h2>FILTERS</h2>
             
             <div class="filter-group">
-                <h3>Categoría</h3>
-                <select id="category-select" class="custom-select" title="Seleccionar categoría">
-                    <option value="all">Todas las categorías</option>
-                    <option value="clothes">Ropa</option>
-                    <option value="electronics">Electrónicos</option>
-                    <option value="furniture">Muebles</option>
-                    <option value="shoes">Zapatos</option>
-                    <option value="miscellaneous">Varios</option>
+                <h3>Category</h3>
+                <select id="category-select" class="custom-select" title="Select category">
+                    <option value="all">All categories</option>
+                    <option value="clothes">Clothes</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="furniture">Furniture</option>
+                    <option value="shoes">Shoes</option>
+                    <option value="miscellaneous">Miscellaneous</option>
                 </select>
             </div>
 
             <div class="filter-group">
-                <h3>Precio</h3>
+                <h3>Price</h3>
                 <div class="price-range">
                     <div class="price-inputs">
                         <input type="number" id="min-price" placeholder="Min" min="0">
                         <span>-</span>
                         <input type="number" id="max-price" placeholder="Max" min="0">
                     </div>
-                    <button class="boton apply-price">Aplicar</button>
+                    <button class="button apply-price">Apply</button>
                 </div>
             </div>
 
-            <button class="boton clear-filters">Limpiar Filtros</button>
+            <button class="button clear-filters">Clear Filters</button>
         </aside>
 
         <main id="results-section">
@@ -56,8 +56,8 @@
             </div>
 
             <div id="pagination">
-                <button class="boton page-btn" disabled>Anterior</button>
-                <button class="boton page-btn">Siguiente</button>
+                <button class="button page-btn" disabled>Previous</button>
+                <button class="button page-btn">Next</button>
             </div>
         </main>
     </div>

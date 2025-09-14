@@ -76,6 +76,25 @@ a:hover{
     text-decoration: underline;
 }
 
+#error-span {
+    color: var(--error);
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    background-color: #ff4b4b1a;
+    border: 1px solid var(--error);
+    border-radius: 4px;
+}
+#success-span {
+    color: var(--back1);
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    background-color: #4bff6c1a;
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+}
+
 @media (max-width:1024px) {
     main{
         justify-content: center;
