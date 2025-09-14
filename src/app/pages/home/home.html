@@ -11,44 +11,33 @@
     <div id="products">
         <h1>FEATURED PRODUCTS</h1>
         <div id="container-cards">
-            <app-product-card [description]="this.description" class="card"></app-product-card>
-
+            @for (product of products; track product.id) {
+                <app-product-card 
+                    class="card"
+                    [imageUrl]="product.images[0]"
+                    [title]="product.title"
+                    [description]="product.description"
+                    [price]="'$' + product.price">
+                </app-product-card>
+            }@empty {
+               <p>No products found</p> 
+            }
         </div>
     </div>
     
     <div id="categories">
         <h1>CATEGORIES</h1>
         <div id="container-categories">
-            <div class="card-categories">
-                <img src="/assets/img/QkIa5tT.jpeg" alt="Clothes category">
-                <div class="category-overlay">
-                    <h2>CLOTHES</h2>
+            @for (category of categories; track category.id){
+                <div class="card-categories">
+                    <img [src]="category.image" [alt]="category.name + ' category image'" [title]="category.name + ' category image'">
+                    <div class="category-overlay">
+                        <h2>{{category.name}}</h2>
+                    </div>
                 </div>
-            </div>
-            <div class="card-categories">
-                <img src="/assets/img/QkIa5tT.jpeg" alt="Electronics category">
-                <div class="category-overlay">
-                    <h2>ELECTRONICS</h2>
-                </div>
-            </div>
-            <div class="card-categories">
-                <img src="/assets/img/QkIa5tT.jpeg" alt="Furniture category">
-                <div class="category-overlay">
-                    <h2>FURNITURE</h2>
-                </div>
-            </div>
-            <div class="card-categories">
-                <img src="/assets/img/QkIa5tT.jpeg" alt="Shoes category">
-                <div class="category-overlay">
-                    <h2>SHOES</h2>
-                </div>
-            </div>
-            <div class="card-categories">
-                <img src="/assets/img/QkIa5tT.jpeg" alt="Miscellaneous category">
-                <div class="category-overlay">
-                    <h2>MISCELLANEOUS</h2>
-                </div>
-            </div>
+            }@empty {
+                <p>No categories found</p>
+            }
         </div>
     </div>
 </main>

@@ -26,7 +26,7 @@ img{
 }
 
 #info{
-    width: 100%;
+    max-width: 100%;
     height: auto;
     background: transparent;
     padding: 20px;
