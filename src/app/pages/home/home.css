@@ -1,14 +1,255 @@
-#container{
+main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--back2);
+    color: var(--font2);
+}
+
+#hero{
     width: 92%;
+    height: 100dvh;
+    padding: 0 4%;
+    background-color: var(--back1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+#img-hero{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(0.7) contrast(1.1);
+    transition: transform 0.3s ease;
+}
+
+#hero:hover #img-hero {
+    transform: scale(1.02);
+}
+
+#text-hero{
+    width: auto;
+    max-width: 500px;
+    height: auto;
+    padding: 30px 40px;
+    position: absolute;
+    background: linear-gradient(135deg, var(--back1), var(--back2));
+    bottom: 80px;
+    left: 8%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap:20px;
+    /*animation: slideInUp 0.8s ease-out;*/
+}
+
+/*@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}*/
+
+#text-hero h1{
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+}
+
+#text-hero p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    font-weight: 400;
+    margin: 0;
+}
+
+#products{
+    width: 86%;
+    background: linear-gradient(135deg, var(--back1), var(--back2));
+    position: relative;
+    margin: -60px;
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 40px;
+}
+
+#container-cards{
+    width: 100%;
     margin: auto;
-    background-color: yellowgreen;
+    padding: 30px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px 40px;
 }
-
 app-product-card{
     min-width: 250px;
     max-width: 25%;
+}
+
+#categories{
+    width: 86%;
+    height: auto;
+    background: linear-gradient(135deg, var(--back1), var(--back2));
+    padding: 100px 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: -20px;
+}
+
+#container-categories{
+    width: 100%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card-categories{
+    width: 280px;
+    height: 180px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px var(--shadow);
+}
+
+.card-categories:hover {
+    transform: translateY(-5px);
+}
+
+.card-categories img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card-categories:hover img {
+    transform: scale(1.1);
+}
+
+.category-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #17181cb3, #23262f99);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.card-categories:hover .category-overlay {
+    background: linear-gradient(135deg, #17181c80, #23262f66);
+}
+
+.category-overlay h2 {
+    color: var(--font);
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    #text-hero {
+        left: 5%;
+        right: 5%;
+        padding: 25px 30px;
+        max-width: none;
+        gap: 10px;
+    }
+    
+    #text-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    #text-hero p {
+        font-size: 1rem;
+    }
+    
+    #categories {
+        padding: 50px 5%;
+        margin-top: 30px;
+    }
+    
+    #container-categories {
+        gap: 20px;
+    }
+    
+    .card-categories {
+        width: 250px;
+        height: 160px;
+    }
+    
+    .category-overlay h2 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #hero {
+        margin-top: 0px;
+    }
+    
+    #text-hero {
+        padding: 20px 25px;
+    }
+    
+    #text-hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    #text-hero .boton {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+    
+    #categories {
+        padding: 40px 3%;
+        margin-top: 20px;
+    }
+    
+    #container-categories {
+        gap: 15px;
+    }
+    
+    .card-categories {
+        width: 220px;
+        height: 140px;
+    }
+    
+    .category-overlay h2 {
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+    }
 }

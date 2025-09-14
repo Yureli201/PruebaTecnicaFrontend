@@ -1,24 +1,24 @@
 <header>
     <div id="container">
         <div>
-            <img src="assets/platzi-icon.svg" alt="Logo de Platzi">
+            <img src="assets/platzi-icon.svg" routerLink="/" alt="Logo de Platzi">
         </div>
         <div>
             <nav>
-                <img src="assets/icons/search-icon.svg" alt="icono buscar producto">
-                <img src="assets/icons/heart-icon.svg" alt="icono de favoritos">
-                <img src="assets/icons/cart-icon.svg" alt="icono de carrito">
-                <img src="assets/icons/user-icon.svg" alt="icono de usuario">
+                <fa-icon routerLink="/search" [icon]="search" />
+                <fa-icon [icon]="heart" />
+                <fa-icon routerLink="/cart" [icon]="cart" />
+                <fa-icon routerLink="/profile" [icon]="user" />
             </nav>
         </div>
     </div>
     <div id="container-mobile">
             <nav>
-                <img src="assets/icons/search-icon.svg" alt="icono buscar producto">
-                <img src="assets/icons/heart-icon.svg" alt="icono de favoritos">
-                <img src="assets/platzi-icon.svg" alt="Logo de Platzi">
-                <img src="assets/icons/cart-icon.svg" alt="icono de carrito">
-                <img src="assets/icons/user-icon.svg" alt="icono de usuario">
+                <fa-icon routerLink="/search" [icon]="search" />
+                <fa-icon [icon]="heart" />
+                <img src="assets/platzi-icon.svg" routerLink="/" alt="Logo de Platzi">
+                <fa-icon routerLink="/cart" [icon]="cart" />
+                <fa-icon routerLink="/profile" [icon]="user" />
             </nav>
     </div>
 </header>

@@ -1,46 +1,33 @@
 main{
     height: 100dvh;
-    width: 100%;
-    background-color: var(--purple);
+    width: 86%;
+    padding: 0 7%;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     align-items: center;
-}
-
-#franja{
-    height: 30dvh;
-    width: 100%;
-    background-color: var(--blue);
-    position:absolute;
-    top:0;
-    bottom: 0;
-    margin: auto;
-    z-index: 0;
+    position: absolute;
+    overflow: hidden;
 }
 
 #container{
-    background-color: var(--back);
+    background-color: var(--font);
+    color: var(--back1);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 30px 15px 50px;
-    margin-right: 4%;
+    padding: 50px 10px;
     border-radius: 20px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
-    border: 2px solid var(--blue);
-    border-bottom: none;
-    box-shadow: 3px 3px 0px var(--blue);
-    z-index: 2;
-    position: absolute;
-    bottom: 0px;
+    position: relative;
+    top: auto;
+    bottom: -100px;
 }
 
 h1{
     margin-top: 0px;
     margin-bottom:20px;
-    font-family: var(--sofia);
     font-size: 2.5rem;
 }
 
@@ -59,7 +46,6 @@ form{
 }
 
 label{
-    font-family: var(--assistant);
     font-size: 0.75rem;
     position: absolute;
     left: 10px;
@@ -67,29 +53,29 @@ label{
 }
 
 input{
-    font-family: var(--sofia);
     height: 50px;
     width: 360px;
     border-radius: 8px;
     padding:5px 10px 0;
-    border:1px solid var(--blue)
+    border:1px solid var(--back1)
 }
 
 button{
     height: 40px;
     width: 150px;
-    border-radius: 8px;
-    background-color: var(--purple);
-    border:2px solid var(--blue);
-    box-shadow: 2px 2px 0px var(--blue);
-    color:var(--back);
-    font-family: var(--poppins)
 }
 
 p{
-    font-family: var(--assistant);
     font-size: 0.75rem;
     margin: 0;
+}
+
+a{
+    font-size: 0.8rem;
+}
+
+a:hover{
+    text-decoration: underline;
 }
 
 #passwords{
@@ -106,19 +92,23 @@ p{
     main{
         justify-content: center;
     }
+    img{
+        display: none;
+    }
     #container{
         margin: 0;
-        width: 90%;
+        width: auto;
         position:static;
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
-        padding:5px;
+        padding:40px 5px;
     }
     form{
-        gap:10px
+        gap:10px;
     }
     input, .password{
         width: 250px;
+        height: 40px;
     }
     #passwords{
         grid-template-columns: 1fr;

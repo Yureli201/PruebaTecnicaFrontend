@@ -1,38 +1,52 @@
 :root {
-    --back:#FFFFFF;
-    --green: #0AE98A;
-    --blue: #0A2239;
-    --purple: #7979FD;
+    --back1:#17181C;
+    --back2: #23262F;
+    --font: #FFFFFF;
+    --font2: #C1C3C8;
+    --btn: #B3C7FF;
+    --btnHover: #9eb6fa;
+    --primary:#0AE98A;
 
-    --poppins: 'Poppins', sans-serif;
-    --sofia: 'Sofia Sans', sans-serif;
-    --assistant: 'Assistant', sans-serif;
+
+    --back1-95: #17181Cf2;
+    --back2-90: #23262Fe6; 
+    --shadow: #00000033;
+    
+    --imb: 'IMB Plex Sans', sans-serif;
 
 }
 
 @font-face {
-    font-family: 'Poppins';
-    src: url('/assets/fonts/Poppins.woff2') format(woff2);
+    font-family: var(--imb);
+    src: url('/assets/fonts/IBMPlexSans-VariableFont.woff2') format(woff2);
     font-size: normal;
-    font-weight: 400;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Assistant';
-    src: url('/assets/fonts/Assistant.woff2') format(woff2);
-    font-size: normal;
-    font-weight: 300 500;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Sofia Sans';
-    src: url('/assets/fonts/SofiaSans.woff2') format(woff2);
-    font-size: normal;
-    font-weight: 300 700;
+    font-weight: 200 900;
     font-display: swap;
 }
 
 body{
     margin:0px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'IMB Plex Sans', sans-serif;
+    color: var(--font);
+    background-color: var(--back1);
+}
+
+.boton{
+    background-color: var(--btn);
+    color: var(--back1);
+    border: none;
+    border-radius: 10px;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    box-shadow: 0 5px 15px #b3c7ff4d;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.boton:hover{
+    background-color: var(--btnHover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px #b3c7ff66;
 }

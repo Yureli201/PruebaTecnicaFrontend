@@ -1,1 +1,64 @@
-<p>search works!</p>
+<main>
+    <div id="search-header">
+        <div id="search-container">
+            <h1>NUESTRO CATÁLOGO</h1>
+            <div id="search-bar">
+                <input type="text" id="search-input" placeholder="¿Qué estás buscando?">
+                <button class="boton search-btn" title="Buscar productos">
+                    <fa-icon [icon]="search" />
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="search-content">
+        <aside id="filters-sidebar">
+            <h2>FILTROS</h2>
+            
+            <div class="filter-group">
+                <h3>Categoría</h3>
+                <select id="category-select" class="custom-select" title="Seleccionar categoría">
+                    <option value="all">Todas las categorías</option>
+                    <option value="clothes">Ropa</option>
+                    <option value="electronics">Electrónicos</option>
+                    <option value="furniture">Muebles</option>
+                    <option value="shoes">Zapatos</option>
+                    <option value="miscellaneous">Varios</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <h3>Precio</h3>
+                <div class="price-range">
+                    <div class="price-inputs">
+                        <input type="number" id="min-price" placeholder="Min" min="0">
+                        <span>-</span>
+                        <input type="number" id="max-price" placeholder="Max" min="0">
+                    </div>
+                    <button class="boton apply-price">Aplicar</button>
+                </div>
+            </div>
+
+            <button class="boton clear-filters">Limpiar Filtros</button>
+        </aside>
+
+        <main id="results-section">
+            <div id="products-grid">
+                <app-product-card class="search-card"></app-product-card>
+                <app-product-card class="search-card"></app-product-card>
+                <app-product-card class="search-card"></app-product-card>
+                <app-product-card class="search-card"></app-product-card>
+                <app-product-card class="search-card"></app-product-card>
+                <app-product-card class="search-card"></app-product-card>
+                <app-product-card class="search-card"></app-product-card>
+                <app-product-card class="search-card"></app-product-card>
+                <app-product-card class="search-card"></app-product-card>
+            </div>
+
+            <div id="pagination">
+                <button class="boton page-btn" disabled>Anterior</button>
+                <button class="boton page-btn">Siguiente</button>
+            </div>
+        </main>
+    </div>
+</main>

@@ -1,9 +1,55 @@
-<app-navbar></app-navbar>
-
-<h1> HOME</h1>
-
-<div id="container">
-    <app-product-card class="card"></app-product-card>
-    <app-product-card class="card"></app-product-card>
-    <app-product-card class="card"></app-product-card>
-</div>
+<main>
+    <div id="hero">
+        <img id="img-hero" src="\assets\img\QkIa5tT.jpeg" alt="">
+        <div id="text-hero">
+            <h1>LA MEJOR TIENDA DE TECNOLOGÍA</h1>
+            <p>Encuentra los mejores productos al mejor precio</p>
+            <button class="boton">Ver productos</button>
+        </div>
+    </div>
+    
+    <div id="products">
+        <h1>PRODUCTOS DESTACADOS</h1>
+        <div id="container-cards">
+            <app-product-card class="card"></app-product-card>
+            <app-product-card class="card"></app-product-card>
+            <app-product-card class="card"></app-product-card>
+        </div>
+    </div>
+    
+    <div id="categories">
+        <h1>CATEGORÍAS</h1>
+        <div id="container-categories">
+            <div class="card-categories">
+                <img src="/assets/img/QkIa5tT.jpeg" alt="Clothes category">
+                <div class="category-overlay">
+                    <h2>CLOTHES</h2>
+                </div>
+            </div>
+            <div class="card-categories">
+                <img src="/assets/img/QkIa5tT.jpeg" alt="Electronics category">
+                <div class="category-overlay">
+                    <h2>ELECTRONICS</h2>
+                </div>
+            </div>
+            <div class="card-categories">
+                <img src="/assets/img/QkIa5tT.jpeg" alt="Furniture category">
+                <div class="category-overlay">
+                    <h2>FURNITURE</h2>
+                </div>
+            </div>
+            <div class="card-categories">
+                <img src="/assets/img/QkIa5tT.jpeg" alt="Shoes category">
+                <div class="category-overlay">
+                    <h2>SHOES</h2>
+                </div>
+            </div>
+            <div class="card-categories">
+                <img src="/assets/img/QkIa5tT.jpeg" alt="Miscellaneous category">
+                <div class="category-overlay">
+                    <h2>MISCELLANEOUS</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
