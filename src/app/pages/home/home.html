@@ -4,7 +4,7 @@
         <div id="text-hero">
             <h1>THE BEST TECHNOLOGY STORE</h1>
             <p>Find the best products at the best price</p>
-            <button class="button">View Products</button>
+            <button class="button" routerLink="/search/0">View Products</button>
         </div>
     </div>
     
@@ -29,7 +29,7 @@
         <h1>CATEGORIES</h1>
         <div id="container-categories">
             @for (category of categories; track category.id){
-                <div class="card-categories">
+                <div class="card-categories" [routerLink]="'/search/' +category.id">
                     <img [src]="category.image" [alt]="category.name + ' category image'" [title]="category.name + ' category image'">
                     <div class="category-overlay">
                         <h2>{{category.name}}</h2>

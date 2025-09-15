@@ -7,7 +7,7 @@ main {
 
 #search-header {
     width: 100%;
-    padding: 120px 0 50px 0;
+    padding: 80px 0 30px 0;
     text-align: center;
     background-color: var(--back1);
 }
@@ -229,6 +229,13 @@ main {
     opacity: 0.5;
     cursor: not-allowed;
     background-color: var(--font2);
+}
+
+.page-info {
+    color: var(--font2);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0 10px;
 }
 
 .page-numbers {

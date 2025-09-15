@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User, NewUser ,UserCredentials } from '../../shared/models/user';
-import { Product, Category } from '../../shared/models/product'
+import { Product, Category, FilterProducts } from '../../shared/models/product'
 
 @Injectable({
   providedIn: 'root'
@@ -15,30 +15,37 @@ export class Api {
 
   constructor(private http: HttpClient){}
 
-  //* Auth
+//* Auth
+
+  //Login
   login(credentials: UserCredentials){
     return this.http.post(`${this.URL_AUTH}/login`, credentials)
   }
-  //* Registro de nuevo usuario
+  //Registro de nuevo usuario
   register(newUser:NewUser){
     return this.http.post(`${this.URL_USER}`, newUser)
   }
-  //* Revisar si el email ya esta en uso
+  //Revisar si el email ya esta en uso
   //! Pero no sirve el endpoint de la API
   checkEmail(email:any){
     return this.http.post(`${this.URL_USER}is-available`, email)
   }
 
-  //* Productos
+//* Productos
 
-  //* Obtener solo n productos
+  //Obtener solo n productos
   getProducts(offset:number, limit:number){
     return this.http.get<Product[]>(`${this.URL_PRODUCTS}?offset=${offset}&limit=${limit}`)
   }
 
-  //* Categorías
+  //Filtrar productos
+  filterProducts(filters:FilterProducts){
+    return this.http.get<Product[]>(`${this.URL_PRODUCTS}/?title=${filters.name}&price_min=${filters.minPrice}&price_max=${filters.maxPrice}&categoryId=${filters.category}`)
+  }
 
-  //*Obtener categorías
+//* Categorías
+
+  //Obtener categorías
   getCategories(){
     return this.http.get<Category[]>(`${this.URL_CATEGORIES}`)
   }

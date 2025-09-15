@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet, RouterModule } from '@angular/router';
+import { RouterOutlet, RouterModule, Router, NavigationEnd } from '@angular/router';
 import { Navbar } from "./shared/components/navbar/navbar";
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,13 @@ import { Navbar } from "./shared/components/navbar/navbar";
 })
 export class App {
   protected readonly title = signal('Platzi Store');
+
+  constructor(private router: Router) {
+    //* Cuando cambia el router-outlet se va a la parte superior de la página
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        window.scrollTo(0, 0)
+      });
+  }
 }

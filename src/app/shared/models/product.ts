@@ -26,3 +26,10 @@ export interface NewProduct {
   categoryId: number
   images: string[]
 }
+
+export interface FilterProducts{
+  name:string | null
+  category:number | null
+  minPrice?:number
+  maxPrice:number | null
+}

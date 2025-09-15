@@ -3,8 +3,8 @@
         <div id="search-container">
             <h1>OUR CATALOG</h1>
             <div id="search-bar">
-                <input type="text" id="search-input" placeholder="What are you looking for?">
-                <button class="button search-btn" title="Search products">
+                <input type="text" id="search-input" placeholder="What are you looking for?" [(ngModel)]="filters.name">
+                <button class="button search-btn" title="Search products" (click)="getProducts()">
                     <fa-icon [icon]="search" />
                 </button>
             </div>
@@ -17,13 +17,11 @@
             
             <div class="filter-group">
                 <h3>Category</h3>
-                <select id="category-select" class="custom-select" title="Select category">
-                    <option value="all">All categories</option>
-                    <option value="clothes">Clothes</option>
-                    <option value="electronics">Electronics</option>
-                    <option value="furniture">Furniture</option>
-                    <option value="shoes">Shoes</option>
-                    <option value="miscellaneous">Miscellaneous</option>
+                <select id="category-select" class="custom-select" title="Select category" [(ngModel)]="filters.category">
+                    <option selected value="0">All Categories</option>
+                    @for (category of categories; track category.id){
+                        <option [value]="category.id">{{category.name}}</option>
+                    }
                 </select>
             </div>
 
@@ -31,34 +29,37 @@
                 <h3>Price</h3>
                 <div class="price-range">
                     <div class="price-inputs">
-                        <input type="number" id="min-price" placeholder="Min" min="0">
+                        <input type="number" id="min-price" placeholder="Min" min="1" [(ngModel)]="filters.minPrice">
                         <span>-</span>
-                        <input type="number" id="max-price" placeholder="Max" min="0">
+                        <input type="number" id="max-price" placeholder="Max" min="0" [(ngModel)]="filters.maxPrice">
                     </div>
-                    <button class="button apply-price">Apply</button>
+                    <button class="button apply-price" (click)="getProducts()">Apply</button>
                 </div>
             </div>
 
-            <button class="button clear-filters">Clear Filters</button>
+            <button class="button clear-filters" (click)="cleanFilters()">Clear Filters</button>
         </aside>
 
         <main id="results-section">
             <div id="products-grid">
-                <app-product-card class="search-card"></app-product-card>
-                <app-product-card class="search-card"></app-product-card>
-                <app-product-card class="search-card"></app-product-card>
-                <app-product-card class="search-card"></app-product-card>
-                <app-product-card class="search-card"></app-product-card>
-                <app-product-card class="search-card"></app-product-card>
-                <app-product-card class="search-card"></app-product-card>
-                <app-product-card class="search-card"></app-product-card>
-                <app-product-card class="search-card"></app-product-card>
-            </div>
+                @for (product of paginatedProducts; track product.id) {
+                    <app-product-card 
+                        class="card"
+                        [imageUrl]="product.images[0]"
+                        [title]="product.title"
+                        [description]="product.description"
+                        [price]="'$' + product.price">
+                    </app-product-card>
+                }@empty {
+                   <p>No products found</p> 
+                }            </div>
 
-            <div id="pagination">
-                <button class="button page-btn" disabled>Previous</button>
-                <button class="button page-btn">Next</button>
-            </div>
+            @if (products.length > itemsPerPage) {
+                <div id="pagination">
+                    <button class="button page-btn" [disabled]="!canGoPrevious" (click)="previousPage()">Previous</button>
+                    <button class="button page-btn" [disabled]="!canGoNext" (click)="nextPage()">Next</button>
+                </div>
+            }
         </main>
     </div>
 </main>

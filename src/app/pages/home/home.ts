@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ProductCard } from '../../shared/components/product-card/product-card';
 import { Api } from '../../core/services/api';
 import { Product, Category } from '../../shared/models/product';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [ ProductCard],
+  imports: [ ProductCard, RouterModule],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
