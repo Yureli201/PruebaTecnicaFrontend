@@ -5,20 +5,23 @@
         </div>
         <div>
             <nav>
+            <!-- TODO: implementar iconos para ver perfil y favoritos -->
                 <fa-icon routerLink="/search/0" [icon]="search" />
-                <fa-icon routerLink="/register" [icon]="heart" />
                 <fa-icon routerLink="/cart" [icon]="cart" />
-                <fa-icon routerLink="/login" [icon]="user" />
+                @if(isLoggedIn()){
+                    <button class="button" routerLink="/login">Login</button>
+                }
             </nav>
         </div>
     </div>
     <div id="container-mobile">
             <nav>
-                <fa-icon routerLink="/search/0" [icon]="search" />
-                <fa-icon routerLink="/register" [icon]="heart" />
                 <img src="assets/platzi-icon.svg" routerLink="/" alt="Logo de Platzi">
+                <fa-icon routerLink="/search/0" [icon]="search" />
                 <fa-icon routerLink="/cart" [icon]="cart" />
-                <fa-icon routerLink="/login" [icon]="user" />
+                @if(isLoggedIn()){
+                    <fa-icon routerLink="/login" [icon]="user" />
+                }
             </nav>
     </div>
 </header>
