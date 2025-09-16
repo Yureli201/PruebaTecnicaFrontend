@@ -15,7 +15,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class Search {
   search = faSearch
-  //*Variables para listar las categorias y los parametros de los filtros
+  //*Variables para listar las categorías y los parámetros de los filtros
   categories:Category[] = []
   filters:FilterProducts = {
     name: '',
