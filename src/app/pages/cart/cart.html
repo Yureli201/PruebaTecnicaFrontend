@@ -1,1 +1,57 @@
-<p>cart works!</p>
+<main>
+    <div class="cart-container">
+        <h1 class="cart-title">YOUR CART</h1>
+        
+        <div class="cart-content">
+            <div class="cart-table">
+                <div class="cart-header">
+                    <span>Product</span>
+                    <span>Price</span>
+                    <span>Quantity</span>
+                    <span>Total</span>
+                </div>
+                
+                @for (cartProduct of cartProducts; track cartProduct.productId){
+                    <div class="cart-items">
+                        <div class="cart-item">
+                            <div class="product-info">
+                                <div class="product-image">
+                                    <img src="{{cartProduct.image}}" alt="Classic Red Pullover Hoodie">
+                                </div>
+                                <div class="product-details">
+                                    <h3>{{cartProduct.title}}</h3>
+                                    <span class="remove-btn" (click)="removeProduct(cartProduct.productId)">Eliminar</span>
+                                </div>
+                            </div>
+                            <div class="product-price">${{cartProduct.price}}</div>
+                            <div class="product-quantity">
+                                <input type="number" [(ngModel)]="cartProduct.quantity" min="1" step="1" (input)="changeQuantity(cartProduct.productId, cartProduct.quantity)">
+                            </div>
+                            <div class="product-total">${{cartProduct.total}}</div>
+                            <div class="mobile-price">${{cartProduct.total}}</div>
+                        </div>
+                    </div>
+                }
+                @empty{
+                    <p>No products in the cart</p>
+                }
+            </div>
+            
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span>{{subtotal}}</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span>{{shipping}}</span>
+                </div>
+                <div class="summary-row total-row">
+                    <span>TOTAL</span>
+                    <span>{{total}}</span>
+                </div>
+                <button class="button checkout-btn">CHECKOUT</button>
+            </div>
+        </div>
+    </div>
+</main>
