@@ -1,1 +1,55 @@
-<p>product-detail works!</p>
+<main>
+    <div class="product-container">
+        <div class="product-images">
+            <div class="main-image">
+                <img [src]="product.images && product.images[0] || ''" [alt]="product.title || 'Product image'" />
+            </div>
+            
+            <div class="thumbnail-gallery">
+                @if (product.images) {
+                    @for (image of product.images; track image){
+                        <div class="thumbnail active">
+                            <img [src]="image" alt="Vistas" />
+                        </div>
+                    }@empty {
+                        <p>No images found</p>
+                    }
+                }
+            </div>
+        </div>
+
+        <div class="product-info">
+            <h1 class="product-title">{{product.title || 'Loading...'}}</h1>
+            <p class="product-description">
+                {{product.description || 'Loading description...'}}
+            </p>
+            <p class="product-price">${{product.price || 0}}</p>
+            
+            <div class="quantity-controls">
+                <button class="button" (click)="changeQuantity(-1)">-</button>
+                <span class="quantity">{{quantity}}</span>
+                <button class="button" (click)="changeQuantity(1)">+</button>
+            </div>
+            
+            <button class="button" (click)="addToCart()">Add to cart</button>
+        </div>
+    </div>
+
+    <section class="related-products">
+        <h2 class="section-title">Also you may like</h2>
+        <div class="products-grid">
+            @for (product of products; track product.id) {
+                <app-product-card 
+                    class="card"
+                    [id_product]="product.id"
+                    [imageUrl]="product.images && product.images[0] || ''"
+                    [title]="product.title"
+                    [description]="product.description"
+                    [price]="product.price" (click)="windowRefresh()">
+                </app-product-card>
+            }@empty {
+               <p>No products found</p> 
+            }
+        </div>
+    </section>
+</main>

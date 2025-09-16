@@ -33,14 +33,21 @@ export class Api {
 
 //* Productos
 
+  //Obtener un producto
+  getProduct(id:number){
+    return this.http.get<Product>(`${this.URL_PRODUCTS}/${id}`)
+  }
   //Obtener solo n productos
   getProducts(offset:number, limit:number){
     return this.http.get<Product[]>(`${this.URL_PRODUCTS}?offset=${offset}&limit=${limit}`)
   }
-
   //Filtrar productos
   filterProducts(filters:FilterProducts){
     return this.http.get<Product[]>(`${this.URL_PRODUCTS}/?title=${filters.name}&price_min=${filters.minPrice}&price_max=${filters.maxPrice}&categoryId=${filters.category}`)
+  }
+  //Obtener productos relacionados
+  getRelatedProducts(id:number, offset:number, limit:number){
+    return this.http.get<Product[]>(`${this.URL_PRODUCTS}/?categoryId=${id}&limit=${limit}&offset=${offset}`)
   }
 
 //* Categorías

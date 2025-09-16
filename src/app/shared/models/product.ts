@@ -33,3 +33,12 @@ export interface FilterProducts{
   minPrice?:number
   maxPrice:number | null
 }
+
+export interface CartProduct{
+  productId: number
+  image: string
+  title: string
+  price: number
+  quantity: number
+  total: number
+}

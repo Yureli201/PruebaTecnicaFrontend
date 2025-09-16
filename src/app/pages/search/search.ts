@@ -15,6 +15,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class Search {
   search = faSearch
+  //*Variables para listar las categorias y los parametros de los filtros
   categories:Category[] = []
   filters:FilterProducts = {
     name: '',
@@ -23,6 +24,8 @@ export class Search {
     category: 0
   }
   products:Product[] = []
+  
+  //*Variables para la paginacion de los productos
   paginatedProducts:Product[] = []
   currentPage: number = 1
   itemsPerPage: number = 9
@@ -32,17 +35,18 @@ export class Search {
 
   constructor(private api:Api, private route:ActivatedRoute){}
   
+  //*Al iniciar se buscan las categorías y los productos en general o de una categoría si esta en los parámetros
   ngOnInit():void {
     this.getCategories()
 
     this.route.params.subscribe((params) => {
       this.filters.category = Number(params['idCategory'])
-      console.log(this.filters.category)
     })
 
     this.getProducts()
   }
 
+  //*Función para obtener las categorías
   getCategories(){
     this.api.getCategories().subscribe({
       next:(data:Category[])=>{
@@ -54,6 +58,7 @@ export class Search {
     })
   }
 
+  //*Función para obtener los productos dependiendo de los filtros
   getProducts(){
     this.api.filterProducts(this.filters).subscribe({
       next:(data:Product[])=>{
@@ -66,6 +71,7 @@ export class Search {
     })
   }
 
+  //*Función para actualizar la paginacion
   updatePagination(): void {
     this.totalPages = Math.ceil(this.products.length / this.itemsPerPage)
     this.canGoNext = this.currentPage < this.totalPages
@@ -77,6 +83,7 @@ export class Search {
     this.upWindow()
   }
 
+  //*Función para ir a la siguiente página
   nextPage(): void {
     if (this.canGoNext) {
       this.currentPage++
@@ -84,6 +91,7 @@ export class Search {
     }
   }
 
+  //*Función para ir a la página anterior
   previousPage(): void {
     if (this.canGoPrevious) {
       this.currentPage--
@@ -91,6 +99,7 @@ export class Search {
     }
   }
 
+  //*Función para limpiar los filtros
   cleanFilters(){
     this.filters= {
       name: '',
@@ -102,6 +111,7 @@ export class Search {
     this.getProducts()
   }
 
+  //*Función para subir la ventana al inicio cada que se cambia de pagina de productos
   upWindow(){
     window.scrollTo(0,0)
   }

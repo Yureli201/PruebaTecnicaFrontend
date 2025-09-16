@@ -14,10 +14,11 @@
             @for (product of products; track product.id) {
                 <app-product-card 
                     class="card"
+                    [id_product]="product.id"
                     [imageUrl]="product.images[0]"
                     [title]="product.title"
                     [description]="product.description"
-                    [price]="'$' + product.price">
+                    [price]="product.price">
                 </app-product-card>
             }@empty {
                <p>No products found</p> 
